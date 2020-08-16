@@ -90,4 +90,16 @@ public class Blog{
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "name='" + name + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                ", content='" + content + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }
