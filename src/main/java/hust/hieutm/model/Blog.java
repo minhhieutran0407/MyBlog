@@ -26,6 +26,17 @@ public class Blog{
         this.date = date;
     }
 
+    public Blog(int id, String name, String title, String author, String type, String description, String content, Date date) {
+        this.id = id;
+        this.name = name;
+        this.title = title;
+        this.author = author;
+        this.type = type;
+        this.description = description;
+        this.content = content;
+        this.date = date;
+    }
+
     public int getId() {
         return id;
     }

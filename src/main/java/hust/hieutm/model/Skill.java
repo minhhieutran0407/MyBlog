@@ -13,6 +13,12 @@ public class Skill {
         this.percent = percent;
     }
 
+    public Skill(int id, String name, String percent) {
+        this.id = id;
+        this.name = name;
+        this.percent = percent;
+    }
+
     public int getId() {
         return id;
     }

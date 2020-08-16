@@ -19,6 +19,14 @@ public class Product {
         this.image = image;
     }
 
+    public Product(int id, String name, String productType, Date releaseDate, String image) {
+        this.id = id;
+        this.name = name;
+        this.productType = productType;
+        this.releaseDate = releaseDate;
+        this.image = image;
+    }
+
     public int getId() {
         return id;
     }

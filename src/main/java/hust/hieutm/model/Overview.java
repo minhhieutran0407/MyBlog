@@ -17,6 +17,14 @@ public class Overview {
         this.awardWon = awardWon;
     }
 
+    public Overview(int id, int worldsComplete, int experience, int totalClients, int awardWon) {
+        this.id = id;
+        this.worldsComplete = worldsComplete;
+        this.experience = experience;
+        this.totalClients = totalClients;
+        this.awardWon = awardWon;
+    }
+
     public int getId() {
         return id;
     }
