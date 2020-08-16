@@ -97,4 +97,17 @@ public class Infos {
     public void setIntroSubtitle(String introSubtitle) {
         this.introSubtitle = introSubtitle;
     }
+
+    @Override
+    public String toString() {
+        return "Infos{" +
+                "name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", email='" + email + '\'' +
+                ", phone=" + phone +
+                ", about='" + about + '\'' +
+                ", introTitle='" + introTitle + '\'' +
+                ", introSubtitle='" + introSubtitle + '\'' +
+                '}';
+    }
 }

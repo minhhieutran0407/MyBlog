@@ -11,7 +11,7 @@ public class InfosDaoImpl implements InfosDao {
     public Infos getInfo() {
         Infos infos = null;
         Connection connection = MySQLUtils.getConnection();
-        String sql = "select info from infos as info where id = 1";
+        String sql = "select * from infos where id = 1";
         try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);

@@ -64,4 +64,14 @@ public class Overview {
     public void setAwardWon(int awardWon) {
         this.awardWon = awardWon;
     }
+
+    @Override
+    public String toString() {
+        return "Overview{" +
+                "worldsComplete=" + worldsComplete +
+                ", experience=" + experience +
+                ", totalClients=" + totalClients +
+                ", awardWon=" + awardWon +
+                '}';
+    }
 }

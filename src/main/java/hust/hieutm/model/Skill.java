@@ -42,4 +42,12 @@ public class Skill {
     public void setPercent(String percent) {
         this.percent = percent;
     }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "name='" + name + '\'' +
+                ", percent='" + percent + '\'' +
+                '}';
+    }
 }
