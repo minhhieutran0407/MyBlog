@@ -53,7 +53,7 @@ public class SkillDaoImpl implements SkillDao {
     @Override
     public int updateSkill(Skill skill) {
         int result = 0;
-        
+
         Connection connection = MySQLUtils.getConnection();
         String sql = "update skill set name = ?, percent = ? where id = ?";
         try {
