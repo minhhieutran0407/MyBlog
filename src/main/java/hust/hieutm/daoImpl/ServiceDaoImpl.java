@@ -44,7 +44,7 @@ public class ServiceDaoImpl implements ServiceDao {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, service.getName());
             ps.setString(2, service.getDescription());
-            
+
             result = ps.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();

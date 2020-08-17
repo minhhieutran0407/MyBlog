@@ -1,8 +1,10 @@
 package hust.hieutm.dao;
 
+import hust.hieutm.model.Skill;
+
 import java.util.List;
 
-public interface Skill {
+public interface SkillDao {
     public List<Skill> getAllSkill();
 
     public void addSkill(Skill skill);
