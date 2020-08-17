@@ -6,10 +6,7 @@ import hust.hieutm.model.Infos;
 import hust.hieutm.model.Overview;
 import sun.awt.OverrideNativeWindowHandle;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class OverviewDaoImpl implements OverviewDao {
     @Override
@@ -25,6 +22,7 @@ public class OverviewDaoImpl implements OverviewDao {
                 int experience = rs.getInt("experience");
                 int totalClients = rs.getInt("total_clients");
                 int awardWon = rs.getInt("award_won");
+                overview = new Overview(worldsComplete, experience, totalClients, awardWon);
             }
         } catch (SQLException throwables) {
             MySQLUtils.rollback(connection);
@@ -35,7 +33,25 @@ public class OverviewDaoImpl implements OverviewDao {
     }
 
     @Override
-    public int updateOverview() {
-        return 0;
+    public int updateOverview(Overview overview) {
+
+        int result = 0;
+        Connection connection = MySQLUtils.getConnection();
+        String sql = "update overview set worlds_complete = ?, experience = ?, total_clients = ?, award_won = ? where id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, overview.getWorldsComplete());
+            ps.setInt(2, overview.getExperience());
+            ps.setInt(3, overview.getTotalClients());
+            ps.setInt(4, overview.getAwardWon());
+
+            result = ps.executeUpdate();
+        } catch (SQLException throwables) {
+            MySQLUtils.rollback(connection);
+            throwables.printStackTrace();
+        }
+        MySQLUtils.closeConnection(connection);
+
+        return result;
     }
 }
