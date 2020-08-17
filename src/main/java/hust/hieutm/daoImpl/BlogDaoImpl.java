@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BlogDaoImpl implements BlogDao {
     @Override
-    public List<Blog> getAllBlock(){
+    public List<Blog> getAllBlog(){
         List<Blog> blogs = new ArrayList<>();
 
         Connection connection = MySQLUtils.getConnection();

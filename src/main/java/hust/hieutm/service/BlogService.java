@@ -10,7 +10,7 @@ public class BlogService {
     BlogDao blogDao = new BlogDaoImpl();
 
     public List<Blog> getAllBlog(){
-        return blogDao.getAllBlock();
+        return blogDao.getAllBlog();
     }
 
     public void addBlog(Blog blog){

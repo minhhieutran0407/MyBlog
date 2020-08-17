@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.List;
 
 public interface BlogDao {
-    public List<Blog> getAllBlock();
+    public List<Blog> getAllBlog();
 
     public void addBlog(Blog blog);
 }

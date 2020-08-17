@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page import="hust.hieutm.model.Infos" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <title>DevFolio Bootstrap Template</title>
@@ -37,7 +38,7 @@
 <!--/ Nav Star /-->
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll" href="#page-top">DevFolio</a>
+        <a class="navbar-brand js-scroll" href="#page-top">Minh Hiếu Trần</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
                 aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -70,6 +71,12 @@
 </nav>
 <!--/ Nav End /-->
 
+<%--Get Info from request--%>
+<%
+    Infos info = null;
+    info = (Infos) request.getAttribute("info");
+%>
+
 <!--/ Intro Skew Star /-->
 <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.jpg)">
     <div class="overlay-itro"></div>
@@ -77,8 +84,8 @@
         <div class="table-cell">
             <div class="container">
                 <!--<p class="display-6 color-d">Hello, world!</p>-->
-                <h1 class="intro-title mb-4">I am Morgan Freeman</h1>
-                <p class="intro-subtitle"><span class="text-slider-items">CEO DevFolio,Web Developer,Web Designer,Frontend Developer,Graphic Designer</span><strong class="text-slider"></strong></p>
+                <h1 class="intro-title mb-4"><%= info.getIntroTitle()%></h1>
+                <p class="intro-subtitle"><span class="text-slider-items"><%= info.getIntroSubtitle()%></span><strong class="text-slider"></strong></p>
                 <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
             </div>
         </div>
