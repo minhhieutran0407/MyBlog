@@ -15,7 +15,7 @@ public class ServiceDaoImpl implements ServiceDao {
         List<Service> serviceList = new ArrayList<>();
 
         Connection connection = MySQLUtils.getConnection();
-        String sql = "select * from serivce";
+        String sql = "select * from service";
         try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);

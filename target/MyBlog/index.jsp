@@ -38,7 +38,7 @@
 <!--/ Nav Star /-->
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll" href="#page-top">Trần Minh Hiếu</a>
+        <a class="navbar-brand js-scroll" href="#page-top">Minh Hiếu Trần</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
                 aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -73,8 +73,8 @@
 
 <%--Get Info from request--%>
 <%
-    Infos info = null;
-    info = (Infos) request.getAttribute("info");
+    Infos info = (Infos) request.getAttribute("info");
+    //out.print(info.toString());
 %>
 
 <!--/ Intro Skew Star /-->
@@ -84,8 +84,8 @@
         <div class="table-cell">
             <div class="container">
                 <!--<p class="display-6 color-d">Hello, world!</p>-->
-                <h1 class="intro-title mb-4"><%= ""%></h1>
-                <p class="intro-subtitle"><span class="text-slider-items"><%= ""%></span><strong class="text-slider"></strong></p>
+                <h1 class="intro-title mb-4"><%= info.getIntroTitle()%></h1>
+                <p class="intro-subtitle"><span class="text-slider-items"><%= info.getIntroSubtitle()%></span><strong class="text-slider"></strong></p>
                 <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
             </div>
         </div>

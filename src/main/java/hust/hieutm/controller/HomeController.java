@@ -3,6 +3,7 @@ package hust.hieutm.controller;
 import hust.hieutm.dao.BlogDao;
 import hust.hieutm.daoImpl.BlogDaoImpl;
 import hust.hieutm.model.Blog;
+import hust.hieutm.model.Infos;
 import hust.hieutm.model.Skill;
 import hust.hieutm.service.*;
 import jdk.nashorn.internal.ir.Block;
@@ -12,20 +13,28 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setCharacterEncoding("UTF-8");
+        HttpSession session = req.getSession();
 
+        Infos infos = null;
+        InfoService infoService = new InfoService();
+        infos = infoService.getInfo();
         req.setAttribute("blogList", new BlogService().getAllBlog());
-        req.setAttribute("info", new InfoService().getInfo());
+        req.setAttribute("info", infos);
         req.setAttribute("overview", new OverviewSerivce().getOverview());
         req.setAttribute("productList", new ProductService().getAllProduct());
         req.setAttribute("serviceList", new ServiceExecute().getAllService());
         req.setAttribute("skillList", new SkillService().getAllSkill());
+//        PrintWriter writer = resp.getWriter();
+//        writer.print(infos.toString());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);

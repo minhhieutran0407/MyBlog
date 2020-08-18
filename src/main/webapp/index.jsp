@@ -73,8 +73,8 @@
 
 <%--Get Info from request--%>
 <%
-    Infos info = null;
-    info = (Infos) request.getAttribute("info");
+    Infos info = (Infos) request.getAttribute("info");
+    //out.print(info.toString());
 %>
 
 <!--/ Intro Skew Star /-->
