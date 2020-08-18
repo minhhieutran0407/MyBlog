@@ -24,11 +24,8 @@ public class HomeController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
-        Infos infos = null;
-        InfoService infoService = new InfoService();
-        infos = infoService.getInfo();
         req.setAttribute("blogList", new BlogService().getAllBlog());
-        req.setAttribute("info", infos);
+        req.setAttribute("info", new InfoService().getInfo());
         req.setAttribute("overview", new OverviewSerivce().getOverview());
         req.setAttribute("productList", new ProductService().getAllProduct());
         req.setAttribute("serviceList", new ServiceExecute().getAllService());

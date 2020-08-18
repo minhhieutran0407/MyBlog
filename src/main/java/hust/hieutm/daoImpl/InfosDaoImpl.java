@@ -17,13 +17,14 @@ public class InfosDaoImpl implements InfosDao {
             ResultSet rs = statement.executeQuery(sql);
             if (rs.next()){
                 String name = rs.getString("name");
+                String profile = rs.getString("my_profile");
                 String avatar = rs.getString("avatar");
                 String email = rs.getString("email");
                 int phone = rs.getInt("phone");
                 String about = rs.getString("about");
                 String introTitle = rs.getString("introTitle");
                 String introSubTitle = rs.getString("introSubtitle");
-                infos = new Infos(name, avatar, email, phone, about, introTitle, introSubTitle);
+                infos = new Infos(name, profile, avatar, email, phone, about, introTitle, introSubTitle);
             }
         } catch (SQLException throwables) {
             MySQLUtils.rollback(connection);
@@ -39,7 +40,7 @@ public class InfosDaoImpl implements InfosDao {
         int result = 0;
 
         Connection connection = MySQLUtils.getConnection();
-        String sql = "update infos set name = ?, avatar = ?, email = ?, phone = ?, about = ?, introTitle = ?, introSubtitle = ? where id = ?";
+        String sql = "update infos set name = ?, avatar = ?, email = ?, phone = ?, about = ?, introTitle = ?, introSubtitle = ?, my_profile = ? where id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, infos.getName());
@@ -49,7 +50,8 @@ public class InfosDaoImpl implements InfosDao {
             ps.setString(5, infos.getAbout());
             ps.setString(6, infos.getIntroTitle());
             ps.setString(7, infos.getIntroSubtitle());
-            ps.setInt(8, infos.getId());
+            ps.setString(8, infos.getProfile());
+            ps.setInt(9, infos.getId());
 
             result = ps.executeUpdate();
         } catch (SQLException throwables) {

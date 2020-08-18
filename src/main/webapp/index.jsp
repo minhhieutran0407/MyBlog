@@ -1,4 +1,5 @@
-<%@ page import="hust.hieutm.model.Infos" %>
+<%@ page import="java.util.List" %>
+<%@ page import="hust.hieutm.model.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="vi">
 <head>
@@ -38,7 +39,7 @@
 <!--/ Nav Star /-->
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll" href="#page-top">Minh Hiếu Trần</a>
+        <a class="navbar-brand js-scroll" href="#page-top">My little corner</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
                 aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -74,7 +75,11 @@
 <%--Get Info from request--%>
 <%
     Infos info = (Infos) request.getAttribute("info");
-    //out.print(info.toString());
+    List<Blog> blogList = (List<Blog>) request.getAttribute("blogList");
+    Overview overview = (Overview) request.getAttribute("overview");
+    List<Product> productList = (List<Product>) request.getAttribute("productList");
+    List<Service> serviceList = (List<Service>) request.getAttribute("serviceList");
+    List<Skill> skillList = (List<Skill>) request.getAttribute("skillList");
 %>
 
 <!--/ Intro Skew Star /-->
@@ -108,8 +113,8 @@
                                 </div>
                                 <div class="col-sm-6 col-md-7">
                                     <div class="about-info">
-                                        <p><span class="title-s">Name: </span> <span>Morgan Freeman</span></p>
-                                        <p><span class="title-s">Profile: </span> <span>full stack developer</span></p>
+                                        <p><span class="title-s">Name: </span> <span><%= info.getName()%></span></p>
+                                        <p><span class="title-s">Profile: </span> <span><%= info.get%></span></p>
                                         <p><span class="title-s">Email: </span> <span>contact@example.com</span></p>
                                         <p><span class="title-s">Phone: </span> <span>(617) 557-0089</span></p>
                                     </div>

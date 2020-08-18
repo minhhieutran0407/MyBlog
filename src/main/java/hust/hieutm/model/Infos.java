@@ -3,6 +3,7 @@ package hust.hieutm.model;
 public class Infos {
     private int id;
     private String name;
+    private String profile;
     private String avatar;
     private String email;
     private int phone;
@@ -13,8 +14,9 @@ public class Infos {
     public Infos() {
     }
 
-    public Infos(String name, String avatar, String email, int phone, String about, String introTitle, String introSubtitle) {
+    public Infos(String name, String profile, String avatar, String email, int phone, String about, String introTitle, String introSubtitle) {
         this.name = name;
+        this.profile = profile;
         this.avatar = avatar;
         this.email = email;
         this.phone = phone;
@@ -23,9 +25,10 @@ public class Infos {
         this.introSubtitle = introSubtitle;
     }
 
-    public Infos(int id, String name, String avatar, String email, int phone, String about, String introTitle, String introSubtitle) {
+    public Infos(int id, String name, String profile, String avatar, String email, int phone, String about, String introTitle, String introSubtitle) {
         this.id = id;
         this.name = name;
+        this.profile = profile;
         this.avatar = avatar;
         this.email = email;
         this.phone = phone;
@@ -48,6 +51,14 @@ public class Infos {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 
     public String getAvatar() {
