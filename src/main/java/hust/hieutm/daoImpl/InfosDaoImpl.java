@@ -20,7 +20,7 @@ public class InfosDaoImpl implements InfosDao {
                 String profile = rs.getString("my_profile");
                 String avatar = rs.getString("avatar");
                 String email = rs.getString("email");
-                int phone = rs.getInt("phone");
+                String phone = rs.getString("phone");
                 String about = rs.getString("about");
                 String introTitle = rs.getString("introTitle");
                 String introSubTitle = rs.getString("introSubtitle");
@@ -46,7 +46,7 @@ public class InfosDaoImpl implements InfosDao {
             ps.setString(1, infos.getName());
             ps.setString(2, infos.getAvatar());
             ps.setString(3, infos.getEmail());
-            ps.setInt(4, infos.getPhone());
+            ps.setString(4, infos.getPhone());
             ps.setString(5, infos.getAbout());
             ps.setString(6, infos.getIntroTitle());
             ps.setString(7, infos.getIntroSubtitle());

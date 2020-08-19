@@ -1,4 +1,5 @@
-<%@ page import="hust.hieutm.model.Infos" %>
+<%@ page import="java.util.List" %>
+<%@ page import="hust.hieutm.model.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="vi">
 <head>
@@ -38,7 +39,7 @@
 <!--/ Nav Star /-->
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll" href="#page-top">Minh Hiếu Trần</a>
+        <a class="navbar-brand js-scroll" href="#page-top">My little corner</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
                 aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -74,11 +75,15 @@
 <%--Get Info from request--%>
 <%
     Infos info = (Infos) request.getAttribute("info");
-    //out.print(info.toString());
+    List<Blog> blogList = (List<Blog>) request.getAttribute("blogList");
+    Overview overview = (Overview) request.getAttribute("overview");
+    List<Product> productList = (List<Product>) request.getAttribute("productList");
+    List<Service> serviceList = (List<Service>) request.getAttribute("serviceList");
+    List<Skill> skillList = (List<Skill>) request.getAttribute("skillList");
 %>
 
 <!--/ Intro Skew Star /-->
-<div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.jpg)">
+<div id="home" class="intro route bg-image" style="background-image: url(img/BVTN.jpg)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
         <div class="table-cell">
@@ -108,10 +113,10 @@
                                 </div>
                                 <div class="col-sm-6 col-md-7">
                                     <div class="about-info">
-                                        <p><span class="title-s">Name: </span> <span>Morgan Freeman</span></p>
-                                        <p><span class="title-s">Profile: </span> <span>full stack developer</span></p>
-                                        <p><span class="title-s">Email: </span> <span>contact@example.com</span></p>
-                                        <p><span class="title-s">Phone: </span> <span>(617) 557-0089</span></p>
+                                        <p><span class="title-s">Name: </span> <span><%= info.getName()%></span></p>
+                                        <p><span class="title-s">Profile: </span> <span><%= info.getProfile()%></span></p>
+                                        <p><span class="title-s">Email: </span> <span><%= info.getEmail()%></span></p>
+                                        <p><span class="title-s">Phone: </span> <span><%= info.getPhone()%></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -721,15 +726,15 @@
                                         mollitia inventore?
                                     </p>
                                     <ul class="list-ico">
-                                        <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                                        <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                                        <li><span class="ion-email"></span> contact@example.com</li>
+                                        <li><span class="ion-ios-location"></span> 121 Kim Ngưu, Hai Bà Trưng, Hà Nội</li>
+                                        <li><span class="ion-ios-telephone"></span> 0934595018</li>
+                                        <li><span class="ion-email"></span> minhhieu.tran0407@gmail.com</li>
                                     </ul>
                                 </div>
                                 <div class="socials">
                                     <ul>
-                                        <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                                        <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+                                        <li><a href="https://www.facebook.com/minhhieu.lucky97"><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
+                                        <li><a href="https://www.instagram.com/minhhieu_lucky/"><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
                                         <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
                                         <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
                                     </ul>

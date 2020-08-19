@@ -6,7 +6,7 @@ public class Infos {
     private String profile;
     private String avatar;
     private String email;
-    private int phone;
+    private String phone;
     private String about;
     private String introTitle;
     private String introSubtitle;
@@ -14,7 +14,7 @@ public class Infos {
     public Infos() {
     }
 
-    public Infos(String name, String profile, String avatar, String email, int phone, String about, String introTitle, String introSubtitle) {
+    public Infos(String name, String profile, String avatar, String email, String phone, String about, String introTitle, String introSubtitle) {
         this.name = name;
         this.profile = profile;
         this.avatar = avatar;
@@ -25,7 +25,7 @@ public class Infos {
         this.introSubtitle = introSubtitle;
     }
 
-    public Infos(int id, String name, String profile, String avatar, String email, int phone, String about, String introTitle, String introSubtitle) {
+    public Infos(int id, String name, String profile, String avatar, String email, String phone, String about, String introTitle, String introSubtitle) {
         this.id = id;
         this.name = name;
         this.profile = profile;
@@ -77,11 +77,11 @@ public class Infos {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
