@@ -122,26 +122,17 @@
                             </div>
                             <div class="skill-mf">
                                 <p class="title-s">Skill</p>
-                                <span>HTML</span> <span class="pull-right">85%</span>
+                                <%
+                                    for(Skill skill : skillList){
+                                %>
+                                <span><%= skill.getName()%></span> <span class="pull-right"><%= skill.getPercent()%></span>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+                                    <div class="progress-bar" role="progressbar" style="width: <%= skill.getPercent().substring(0,2)%>%;" aria-valuenow="<%= Integer.valueOf(skill.getPercent().substring(0,2))%>" aria-valuemin="0"
                                          aria-valuemax="100"></div>
                                 </div>
-                                <span>CSS3</span> <span class="pull-right">75%</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                                <span>PHP</span> <span class="pull-right">50%</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                                <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div class="col-md-6">
