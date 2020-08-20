@@ -1,5 +1,6 @@
 package hust.hieutm.controller;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,13 +11,15 @@ import java.io.PrintWriter;
 public class SendEmailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter writer = resp.getWriter();
-        writer.print("Hello");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter writer = resp.getWriter();
-        writer.print("Hello");
+        String name = req.getParameter("name");
+        String email = req.getParameter("email");
+        String subject = req.getParameter("subject");
+        String message = req.getParameter("message");
+
+        
     }
 }
