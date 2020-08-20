@@ -7,6 +7,8 @@
   <welcome-file-list>
     <welcome-file>HomeController</welcome-file>
   </welcome-file-list>
+
+<!--  HomeController-->
   <servlet>
     <servlet-name>HomeController</servlet-name>
     <servlet-class>hust.hieutm.controller.HomeController</servlet-class>
@@ -14,5 +16,15 @@
   <servlet-mapping>
     <servlet-name>HomeController</servlet-name>
     <url-pattern></url-pattern>
+  </servlet-mapping>
+
+<!--  Send Email Controller-->
+  <servlet>
+    <servlet-name>EmailController</servlet-name>
+    <servlet-class>hust.hieutm.controller.SendEmailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmailController</servlet-name>
+    <url-pattern>/sendEmail</url-pattern>
   </servlet-mapping>
 </web-app>

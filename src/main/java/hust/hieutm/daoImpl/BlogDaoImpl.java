@@ -23,10 +23,10 @@ public class BlogDaoImpl implements BlogDao {
                 String title = rs.getString("title");
                 String author = rs.getString("author");
                 String type = rs.getString("type");
-                String descripton = rs.getString("description");
+                String description = rs.getString("description");
                 String content = rs.getString("content");
                 Date date = rs.getDate("create_date");
-                Blog blog = new Blog(name, title, author, type, descripton, content, date);
+                Blog blog = new Blog(name, title, author, type, description, content, date);
                 blogs.add(blog);
             }
         } catch (SQLException e){
