@@ -12,7 +12,8 @@
 </head>
 <body>
 <%
+    Skill skill = (Skill) request.getAttribute("skill");
 %>
-<%= "Hi"%>
+<%= skill.getName()%>
 </body>
 </html>
