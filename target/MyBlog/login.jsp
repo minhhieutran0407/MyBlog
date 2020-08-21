@@ -1,5 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 	<title>Login V4</title>
 	<meta charset="UTF-8">
