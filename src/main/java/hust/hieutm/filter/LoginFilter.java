@@ -34,13 +34,17 @@ public class LoginFilter implements Filter {
             }
         }
 
-        AccountDao accountDao = new AccountDaoImpl();
-        Account account = accountDao.getAccountByUsername(username);
+        Account account = null;
+
+        if (username != null){
+            AccountDao accountDao = new AccountDaoImpl();
+            account = accountDao.getAccountByUsername(username);
+        }
 
         if (account != null && password.equals(account.getPassword())) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + "login");
+            response.sendRedirect(request.getContextPath() + "/login");
         }
     }
 
