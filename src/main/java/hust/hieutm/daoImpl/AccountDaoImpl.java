@@ -15,7 +15,7 @@ public class AccountDaoImpl implements AccountDao {
         Account account = null;
         Connection connection = MySQLUtils.getConnection();
         try {
-            String sql = "select * from account where id = ?";
+            String sql = "select * from user_account where id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -37,7 +37,7 @@ public class AccountDaoImpl implements AccountDao {
         Account account = null;
         Connection connection = MySQLUtils.getConnection();
         try {
-            String sql = "select * from account where username = ?";
+            String sql = "select * from user_account where username = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, transUsername);
             ResultSet rs = ps.executeQuery();
@@ -60,7 +60,7 @@ public class AccountDaoImpl implements AccountDao {
     public void createAccount(Account account) {
         Connection connection = MySQLUtils.getConnection();
         try{
-            String sql = "insert into account(id, username, password) values(?, ?, ?)";
+            String sql = "insert into user_account(id, username, password) values(?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, account.getId());
             ps.setString(2, account.getUsername());
@@ -77,7 +77,7 @@ public class AccountDaoImpl implements AccountDao {
         int result = 0;
         Connection connection = MySQLUtils.getConnection();
         try{
-            String sql = "update account set username = ?. password = ? where id = ?";
+            String sql = "update user_account set username = ?. password = ? where id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, account.getUsername());
             ps.setString(2, account.getPassword());
