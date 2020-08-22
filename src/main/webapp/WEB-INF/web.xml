@@ -48,6 +48,16 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
+<!--  Login process controller-->
+<servlet>
+  <servlet-name>LoginProcess</servlet-name>
+  <servlet-class>hust.hieutm.controller.LoginProcessController</servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>LoginProcess</servlet-name>
+    <url-pattern>/loginProcess</url-pattern>
+  </servlet-mapping>
+
 <!--  Filter to blog-->
   <filter>
     <filter-name>Blog</filter-name>

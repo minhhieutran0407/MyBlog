@@ -41,12 +41,14 @@ public class AccountDaoImpl implements AccountDao {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, transUsername);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()){
+            while (rs.next()){
                 int accountId = rs.getInt("id");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
+                System.out.println(accountId + " " + username + " " + password);
                 account = new Account(accountId, username, password);
             }
+            System.out.println(account);
         } catch (SQLException e){
             e.printStackTrace();
         }

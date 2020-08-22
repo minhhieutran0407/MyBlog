@@ -25,7 +25,11 @@ public class LoginProcessController extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("pass");
 
-        Account account = accountDao.getAccountByUsername(username);
+        Account account = null;
+        if (username != null && password != null){
+            account = accountDao.getAccountByUsername(username);
+        }
+
         if (account != null && password.equals(account.getPassword())){
             Cookie cookie1 = new Cookie("username", username);
             cookie1.setMaxAge(604800);
@@ -35,7 +39,7 @@ public class LoginProcessController extends HttpServlet {
             resp.addCookie(cookie1);
             resp.addCookie(cookie2);
 
-            resp.sendRedirect(req.getContextPath());
+            resp.sendRedirect(req.getContextPath() + "/blog");
         }
     }
 }
